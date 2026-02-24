@@ -3,6 +3,7 @@
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
     </PropertyGroup>
     <ItemGroup>
-        
+        <!-- Result -->
+        <PackageVersion Include="FluentResults" Version="4.0.0"/>
     </ItemGroup>
 </Project>

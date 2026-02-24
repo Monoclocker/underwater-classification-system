@@ -3,5 +3,6 @@
   <Folder Name="/profiles/src/">
     <File Path="profiles\src\Directory.Packages.props" />
     <Project Path="profiles/src/ProfilesService.Domain/ProfilesService.Domain.csproj" />
+    <Project Path="profiles/src/ProfilesService.Errors/ProfilesService.Errors.csproj" />
   </Folder>
 </Solution>
