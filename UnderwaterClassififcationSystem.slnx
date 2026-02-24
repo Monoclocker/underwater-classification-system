@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/profiles/" />
+  <Folder Name="/profiles/src/">
+    <File Path="profiles\src\Directory.Packages.props" />
+    <Project Path="profiles/src/ProfilesService.Domain/ProfilesService.Domain.csproj" />
+  </Folder>
+</Solution>
