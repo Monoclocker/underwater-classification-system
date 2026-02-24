@@ -15,7 +15,7 @@ public sealed class UserProfile
     private UserProfile() {}
     #pragma warning restore
 
-    public List<OrganizationMember> OrganizationMembers { get; private set; } = [];
+    public List<OrganizationMember> OrganizationMembersNavigation { get; private init; } = [];
     
     #endregion
     
