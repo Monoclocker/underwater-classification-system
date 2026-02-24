@@ -54,7 +54,32 @@ public sealed class Organization
         return Result.Ok();
     }
 
-    public Result TransferOrganizationOwnership(Guid initiatorId, Guid newOwnerId)
+    public Result AddMember(Guid newMemberId)
+    {
+        if (IsMemberExists(newMemberId)) 
+            return Result.Fail(new MemberExistsError());
+        
+        _organizationMembers.Add(OrganizationMember.CreateAsRegularMember(newMemberId));
+        
+        return Result.Ok();
+    }
+
+    public Result RemoveMember(Guid memberId)
+    {
+        var member = GetOrganizationMember(memberId);
+
+        if (member is null)
+            return Result.Fail(new MemberNotFoundError());
+
+        if (IsMemberOwner(member) && _organizationMembers.Count != 1)
+            return Result.Fail(new OwnerRemovalError());
+        
+        _organizationMembers.Remove(member);
+        
+        return Result.Ok();
+    }
+    
+    public Result TransferOwnership(Guid initiatorId, Guid newOwnerId)
     {
         var oldOwner = GetOrganizationMember(initiatorId);
         var newOwner = GetOrganizationMember(newOwnerId);
@@ -73,28 +98,6 @@ public sealed class Organization
         
         oldOwner.DemoteFromOwner();
         newOwner.PromoteToOwner();
-        
-        return Result.Ok();
-    }
-
-    public Result AddMember(Guid newMemberId)
-    {
-        if (IsMemberExists(newMemberId)) 
-            return Result.Fail(new MemberExistsError());
-        
-        _organizationMembers.Add(OrganizationMember.CreateAsRegularMember(newMemberId));
-        
-        return Result.Ok();
-    }
-
-    public Result RemoveMember(Guid memberId)
-    {
-        var member = GetOrganizationMember(memberId);
-
-        if (member is null)
-            return Result.Fail(new MemberNotFoundError());
-        
-        _organizationMembers.Remove(member);
         
         return Result.Ok();
     }
@@ -119,17 +122,17 @@ public sealed class Organization
         return Result.Ok();
     }
 
-    public Result UpdateImage(Guid initiatorId, ImageRef newImage)
+    public Result UpdateImage(Guid initiatorId, ImageRef? newImage)
     {
-        if (!IsMemberExists(initiatorId))
-            return Result.Fail(new MemberNotFoundError());
+        if (!IsMemberOwner(initiatorId))
+            return Result.Fail(new OwnershipError());
 
         Image = newImage;
         
         return Result.Ok();
     }  
     
-    private bool IsMemberExists(Guid memberId) => GetOrganizationMember(memberId) is null;
+    private bool IsMemberExists(Guid memberId) => GetOrganizationMember(memberId) is not null;
     
     private OrganizationMember? GetOrganizationMember(Guid memberId) =>
         _organizationMembers.FirstOrDefault(m => m.MemberId == memberId);

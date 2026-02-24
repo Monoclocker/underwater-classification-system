@@ -6,4 +6,7 @@
     <Project Path="profiles/src/ProfilesService.Errors/ProfilesService.Errors.csproj" />
     <Project Path="profiles/src/ProfilesService.Infrastructure/ProfilesService.Infrastructure.csproj" />
   </Folder>
+  <Folder Name="/profiles/tests/">
+    <Project Path="profiles/tests/ProfilesService.UnitTests/ProfilesService.UnitTests.csproj" />
+  </Folder>
 </Solution>
