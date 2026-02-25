@@ -9,7 +9,7 @@ public static class DbUpdateExceptionExtensions
     {
         public bool IsUniqueViolation()
         {
-            return ex.InnerException is NpgsqlException { ErrorCode: 23505 };
+            return ex.InnerException is PostgresException { SqlState: "23505" };
         }
     } 
 }

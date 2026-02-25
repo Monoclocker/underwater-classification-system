@@ -46,12 +46,5 @@ public sealed class UserProfile
         PersonalInformation = PersonalInformation with { LastName = newLastName };
     }
 
-    public void UpdateEmail(string newEmail)
-    {
-        ArgumentException.ThrowIfNullOrWhiteSpace(newEmail);
-        
-        PersonalInformation = PersonalInformation with { Email = newEmail };
-    }
-
     public static UserProfile Create(Guid id, UserPersonalInformation information) => new(id, information);
 }

@@ -34,7 +34,6 @@ namespace ProfilesService.Infrastructure.Database.Migrations
                     shown_name = table.Column<string>(type: "text", nullable: false),
                     first_name = table.Column<string>(type: "text", nullable: false),
                     last_name = table.Column<string>(type: "text", nullable: false),
-                    email = table.Column<string>(type: "text", nullable: false),
                     image_link = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>

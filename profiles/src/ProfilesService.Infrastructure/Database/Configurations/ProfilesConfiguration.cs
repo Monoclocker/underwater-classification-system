@@ -28,10 +28,6 @@ internal sealed class ProfilesConfiguration : IEntityTypeConfiguration<UserProfi
                 navigationBuilder
                     .Property(x => x.LastName)
                     .HasColumnName("last_name");
-                
-                navigationBuilder
-                    .Property(x => x.Email)
-                    .HasColumnName("email");
             });
         
         builder.OwnsOne(x => x.Image, 

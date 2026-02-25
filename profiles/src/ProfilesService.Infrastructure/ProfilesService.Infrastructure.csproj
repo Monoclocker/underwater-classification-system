@@ -10,10 +10,14 @@
         <PackageReference Include="Microsoft.EntityFrameworkCore"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design"/>
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL"/>
+        <PackageReference Include="Minio"/>
+        <PackageReference Include="Keycloak.AuthServices.Sdk"/>
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ProfilesService.Domain\ProfilesService.Domain.csproj" />
+        <ProjectReference Include="..\ProfilesService.Domain\ProfilesService.Domain.csproj" />
     </ItemGroup>
+    
+    
     
 </Project>

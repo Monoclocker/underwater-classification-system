@@ -2,21 +2,18 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using ProfilesService.Infrastructure.Database.Design;
+using ProfilesService.Infrastructure.Database;
 
 #nullable disable
 
 namespace ProfilesService.Infrastructure.Database.Migrations
 {
-    [DbContext(typeof(DesignTimeContext))]
-    [Migration("20260224131856_Initial")]
-    partial class Initial
+    [DbContext(typeof(ProfilesDbContext))]
+    partial class ProfilesDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -161,11 +158,6 @@ namespace ProfilesService.Infrastructure.Database.Migrations
                         {
                             b1.Property<Guid>("UserProfileId")
                                 .HasColumnType("uuid");
-
-                            b1.Property<string>("Email")
-                                .IsRequired()
-                                .HasColumnType("text")
-                                .HasColumnName("email");
 
                             b1.Property<string>("FirstName")
                                 .IsRequired()

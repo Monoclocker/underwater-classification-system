@@ -11,5 +11,10 @@
         <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.3"/>
         <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.0"/>
         
+        <!-- S3 -->
+        <PackageVersion Include="Minio" Version="7.0.0"/>
+        
+        <!-- Keycloak -->
+        <PackageVersion Include="Keycloak.AuthServices.Sdk" Version="2.8.0"/>
     </ItemGroup>
 </Project>

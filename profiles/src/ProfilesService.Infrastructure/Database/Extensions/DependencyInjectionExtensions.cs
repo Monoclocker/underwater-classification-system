@@ -13,10 +13,7 @@ public static class DependencyInjectionExtensions
             string connectionString = configuration.GetConnectionString("Database")
                 ?? throw new ArgumentException("Database connection string was not provided");
 
-            services.AddDbContext<ReadWriteProfilesDbContext>(
-                options => options.UseNpgsql(connectionString));
-            
-            services.AddDbContext<IReadOnlyProfilesDbContext, ReadOnlyProfilesDbContext>(
+            services.AddDbContext<ProfilesDbContext>(
                 options => options.UseNpgsql(connectionString));
         } 
     }
