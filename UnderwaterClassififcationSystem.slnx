@@ -9,6 +9,5 @@
   </Folder>
   <Folder Name="/profiles/tests/">
     <Project Path="profiles/tests/ProfilesService.IntegrationTests/ProfilesService.IntegrationTests.csproj" />
-    <Project Path="profiles/tests/ProfilesService.UnitTests/ProfilesService.UnitTests.csproj" />
   </Folder>
 </Solution>

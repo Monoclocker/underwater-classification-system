@@ -5,7 +5,6 @@ namespace ProfilesService.Infrastructure.Database;
 
 public sealed class ProfilesDbContext(DbContextOptions<ProfilesDbContext> options) : DbContext(options)
 {
-    public DbSet<Organization> Organizations { get; init; }
     public DbSet<UserProfile> Profiles { get; init; }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -8,14 +8,15 @@ using ProfilesService.IntegrationTests.Fixtures;
 
 namespace ProfilesService.IntegrationTests.Handlers;
 
-public sealed class CreateUserProfileHandlerTests : IClassFixture<DatabaseFixture>, IAsyncDisposable
+[Collection(nameof(IntegrationTestsFixture))]
+public sealed class CreateUserProfileHandlerTests : IAsyncDisposable
 {
     private readonly ProfilesDbContext _context;
     private readonly CreateUserProfileCommandHandler _handler;
     
-    public CreateUserProfileHandlerTests(DatabaseFixture fixture)
+    public CreateUserProfileHandlerTests(IntegrationTestsFixture fixtureCollection)
     {
-        _context = fixture.BuildContext();
+        _context = fixtureCollection.DatabaseFixture.BuildContext();
         _handler = new CreateUserProfileCommandHandler(_context);
     }
 

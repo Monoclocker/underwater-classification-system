@@ -11,7 +11,7 @@
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design"/>
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL"/>
         <PackageReference Include="Minio"/>
-        <PackageReference Include="Keycloak.AuthServices.Sdk"/>
+        <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis"/>
     </ItemGroup>
 
     <ItemGroup>

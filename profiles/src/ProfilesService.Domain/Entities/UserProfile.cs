@@ -10,13 +10,9 @@ public sealed class UserProfile
     public ImageRef? Image { get; set; }
     
     #region EF
-    
     #pragma warning disable
     private UserProfile() {}
     #pragma warning restore
-
-    public List<OrganizationMember> OrganizationMembersNavigation { get; private init; } = [];
-    
     #endregion
     
     private UserProfile(Guid id, UserPersonalInformation personalInformation)
