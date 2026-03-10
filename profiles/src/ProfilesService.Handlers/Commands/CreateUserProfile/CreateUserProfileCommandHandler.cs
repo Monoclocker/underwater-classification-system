@@ -7,7 +7,7 @@ using ProfilesService.Infrastructure.Database.Extensions;
 
 namespace ProfilesService.Handlers.Commands.CreateUserProfile;
 
-internal sealed class CreateUserProfileCommandHandler : ICommandHandler<CreateUserProfileCommand>
+internal sealed class CreateUserProfileCommandHandler : ICommandHandler<CreateUserProfileCommand, Result>
 {
     private readonly ProfilesDbContext _context;
     

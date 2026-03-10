@@ -19,5 +19,12 @@
         
         <!-- Distributed Cache -->
         <PackageVersion Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="10.0.3"/>
+        
+        <!-- OpenApi -->
+        <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="10.0.3"/>
+        
+        <!-- Authorization -->
+        <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.3"/>
+        
     </ItemGroup>
 </Project>

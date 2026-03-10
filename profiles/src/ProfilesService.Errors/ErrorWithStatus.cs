@@ -15,7 +15,7 @@ public static class ErrorExtensions
 {
     private const string DefaultErrorCode = "unknown";
     
-    extension(Error error)
+    extension(IError error)
     {
         public string GetErrorCode() => error.Metadata["ErrorCode"].ToString() ?? DefaultErrorCode;
     }
