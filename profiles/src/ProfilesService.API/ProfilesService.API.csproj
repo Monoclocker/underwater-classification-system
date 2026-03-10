@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <ContainerBaseImage>mcr.microsoft.com/dotnet/aspnet:10.0</ContainerBaseImage>
+        <ContainerFamily>alpine</ContainerFamily>
+        <ContainerRuntimeIdentifier>linux-x64</ContainerRuntimeIdentifier>
+        <ContainerImageTag>0.0.1</ContainerImageTag>
+        <ContainerRepository>underwaterclassificationsystem/profilesservice</ContainerRepository>
+        <UserSecretsId>e859f1be-ddf7-4452-9556-cf99e6182ee9</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi"/>
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ProfilesService.Handlers\ProfilesService.Handlers.csproj" />
+    </ItemGroup>
+</Project>

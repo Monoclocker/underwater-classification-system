@@ -7,11 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="FluentResults"/>
+      <PackageReference Include="FluentResults" />
     </ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\ProfilesService.Errors\ProfilesService.Errors.csproj" />
-    </ItemGroup>
-    
 </Project>

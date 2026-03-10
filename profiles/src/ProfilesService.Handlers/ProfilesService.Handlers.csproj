@@ -7,11 +7,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="FluentResults"/>
+        <InternalsVisibleTo Include="ProfilesService.IntegrationTests"/>
+    </ItemGroup>
+    
+    <ItemGroup>
+      <PackageReference Include="FluentResults" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ProfilesService.Errors\ProfilesService.Errors.csproj" />
+      <ProjectReference Include="..\ProfilesService.Infrastructure\ProfilesService.Infrastructure.csproj" />
     </ItemGroup>
-    
+
 </Project>
