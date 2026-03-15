@@ -1,4 +1,11 @@
 <Solution>
+  <Folder Name="/devices/" />
+  <Folder Name="/devices/src/">
+    <File Path="devices\Directory.Packages.props" />
+    <Project Path="devices/src/DevicesService.Domain/DevicesService.Domain.csproj" />
+    <Project Path="devices/src/DevicesService.Infrastructure/DevicesService.Infrastructure.csproj" />
+    <Project Path="devices\src\DevicesService.API\DevicesService.API.csproj" />
+  </Folder>
   <Folder Name="/profiles/" />
   <Folder Name="/profiles/src/">
     <File Path="profiles\src\Directory.Packages.props" />
